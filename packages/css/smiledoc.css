@@ -1,0 +1,513 @@
+@charset "UTF-8";
+.smiledoc {
+  /* === İZOLASYON TABANI === */
+  font-family: "NotoSans", sans-serif;
+  /* sadece kendi fontun */
+  font-size: 16px;
+  line-height: 1.4;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  /* Scoped box-model ve reset */
+  /* Kod blokları da sadece kendi fontun */
+  /* Root */
+  /* A4 editor surface */
+  /* Layers */
+  /* Content cards */
+  /* Invisible move hitbox */
+  /* Export page styling parity */
+  /* Utility */
+  /* TIPTAP (izole) */
+}
+.smiledoc h1,
+.smiledoc h2,
+.smiledoc h3,
+.smiledoc h4,
+.smiledoc h5,
+.smiledoc h6,
+.smiledoc p,
+.smiledoc ul,
+.smiledoc ol,
+.smiledoc dl,
+.smiledoc figure,
+.smiledoc blockquote,
+.smiledoc pre,
+.smiledoc table,
+.smiledoc hr {
+  margin: 0;
+}
+.smiledoc ul,
+.smiledoc ol {
+  list-style: none;
+  padding: 0;
+}
+.smiledoc a {
+  color: inherit;
+  text-decoration: none;
+}
+.smiledoc img,
+.smiledoc svg,
+.smiledoc video,
+.smiledoc canvas,
+.smiledoc iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.smiledoc pre,
+.smiledoc code,
+.smiledoc kbd,
+.smiledoc samp {
+  font-family: "NotoSans";
+}
+.smiledoc-app {
+  background-color: aliceblue;
+}
+.smiledoc-title {
+  margin: 0 0 12px;
+  color: #111827;
+}
+.smiledoc-editor-root {
+  width: 794px;
+  height: 1123px;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  page-break-after: always;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.smiledoc-editor-root:last-child {
+  page-break-after: auto;
+}
+.smiledoc .moveable-control {
+  pointer-events: auto;
+}
+.smiledoc .moveable-control-box {
+  pointer-events: none;
+}
+.smiledoc-drag-handle {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid #3b82f6;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  cursor: grab;
+  z-index: 100;
+  pointer-events: auto;
+}
+.smiledoc-drag-handle:active {
+  cursor: grabbing;
+}
+.smiledoc-layer {
+  position: absolute;
+  inset: 0;
+}
+.smiledoc-move-layer {
+  z-index: 20;
+  pointer-events: none;
+}
+.smiledoc-content-layer {
+  z-index: 10;
+}
+.smiledoc-content-whitespace {
+  width: 794px;
+  height: 1123px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.smiledoc-content-area {
+  border-radius: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.smiledoc-move-area {
+  background: transparent;
+  outline: none;
+  pointer-events: auto;
+}
+.smiledoc-a4-page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.smiledoc-hidden {
+  display: none !important;
+}
+.smiledoc .tiptap {
+  font-family: "NotoSans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  /* uzun kelimeyi istediği yerde kır */
+  word-break: break-word;
+  /* List styles */
+  /* Heading styles */
+  /* Code and preformatted text styles */
+}
+.smiledoc .tiptap p:empty::before {
+  content: " ";
+}
+.smiledoc .tiptap ul {
+  list-style: disc;
+}
+.smiledoc .tiptap ol {
+  list-style: decimal;
+}
+.smiledoc .tiptap ul,
+.smiledoc .tiptap ol {
+  list-style-position: outside;
+  padding: 0 16px;
+  margin: 20px 16px 20px 6.4px;
+}
+.smiledoc .tiptap ul li p,
+.smiledoc .tiptap ol li p {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+.smiledoc .tiptap h1,
+.smiledoc .tiptap h2,
+.smiledoc .tiptap h3,
+.smiledoc .tiptap h4,
+.smiledoc .tiptap h5,
+.smiledoc .tiptap h6 {
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-wrap: pretty;
+  font-weight: 600;
+}
+.smiledoc .tiptap h1 {
+  font-size: 22.4px;
+}
+.smiledoc .tiptap h2 {
+  font-size: 19.2px;
+}
+.smiledoc .tiptap h3 {
+  font-size: 17.6px;
+}
+.smiledoc .tiptap h4,
+.smiledoc .tiptap h5,
+.smiledoc .tiptap h6 {
+  font-size: 16px;
+}
+.smiledoc .tiptap code {
+  background-color: var(--purple-light, #f2ecff);
+  border-radius: 6.4px;
+  color: var(--black, #111111);
+  font-size: 13.6px;
+  padding: 0.25em 0.3em;
+}
+.smiledoc .tiptap pre {
+  background: var(--black, #111111);
+  border-radius: 8px;
+  color: var(--white, #ffffff);
+  margin: 24px 0;
+  padding: 12px 16px;
+}
+.smiledoc .tiptap pre code {
+  background: none;
+  color: inherit;
+  font-size: 12.8px;
+  padding: 0;
+}
+.smiledoc .tiptap blockquote {
+  border-left: 3px solid var(--gray-3, #e5e7eb);
+  margin: 24px 0;
+  padding-left: 16px;
+}
+.smiledoc .tiptap hr {
+  border: none;
+  border-top: 1px solid var(--gray-2, #e5e7eb);
+  margin: 32px 0;
+}
+
+:root {
+  --smdoc-primary-50: #f0fdfa;
+  --smdoc-primary-100: #ccfbf1;
+  --smdoc-primary-200: #99f6e4;
+  --smdoc-primary-300: #5eead4;
+  --smdoc-primary-400: #2dd4bf;
+  --smdoc-primary-500: #14b8a6;
+  --smdoc-primary-600: #0d9488;
+  --smdoc-primary-700: #0f766e;
+  --smdoc-primary-800: #115e59;
+  --smdoc-primary-900: #134e4a;
+  --smdoc-primary-950: #042f2e;
+}
+
+:root {
+  --smdoc-inherit: inherit;
+  --smdoc-current: currentColor;
+  --smdoc-transparent: transparent;
+  --smdoc-black: #000;
+  --smdoc-white: #fff;
+  --smdoc-slate-50: #f8fafc;
+  --smdoc-slate-100: #f1f5f9;
+  --smdoc-slate-200: #e2e8f0;
+  --smdoc-slate-300: #cbd5e1;
+  --smdoc-slate-400: #94a3b8;
+  --smdoc-slate-500: #64748b;
+  --smdoc-slate-600: #475569;
+  --smdoc-slate-700: #334155;
+  --smdoc-slate-800: #1e293b;
+  --smdoc-slate-900: #0f172a;
+  --smdoc-slate-950: #020617;
+  --smdoc-gray-50: #f9fafb;
+  --smdoc-gray-100: #f3f4f6;
+  --smdoc-gray-200: #e5e7eb;
+  --smdoc-gray-300: #d1d5db;
+  --smdoc-gray-400: #9ca3af;
+  --smdoc-gray-500: #6b7280;
+  --smdoc-gray-600: #4b5563;
+  --smdoc-gray-700: #374151;
+  --smdoc-gray-800: #1f2937;
+  --smdoc-gray-900: #111827;
+  --smdoc-gray-950: #030712;
+  --smdoc-zinc-50: #fafafa;
+  --smdoc-zinc-100: #f4f4f5;
+  --smdoc-zinc-200: #e4e4e7;
+  --smdoc-zinc-300: #d4d4d8;
+  --smdoc-zinc-400: #a1a1aa;
+  --smdoc-zinc-500: #71717a;
+  --smdoc-zinc-600: #52525b;
+  --smdoc-zinc-700: #3f3f46;
+  --smdoc-zinc-800: #27272a;
+  --smdoc-zinc-900: #18181b;
+  --smdoc-zinc-950: #09090b;
+  --smdoc-neutral-50: #fafafa;
+  --smdoc-neutral-100: #f5f5f5;
+  --smdoc-neutral-200: #e5e5e5;
+  --smdoc-neutral-300: #d4d4d4;
+  --smdoc-neutral-400: #a3a3a3;
+  --smdoc-neutral-500: #737373;
+  --smdoc-neutral-600: #525252;
+  --smdoc-neutral-700: #404040;
+  --smdoc-neutral-800: #262626;
+  --smdoc-neutral-900: #171717;
+  --smdoc-neutral-950: #0a0a0a;
+  --smdoc-stone-50: #fafaf9;
+  --smdoc-stone-100: #f5f5f4;
+  --smdoc-stone-200: #e7e5e4;
+  --smdoc-stone-300: #d6d3d1;
+  --smdoc-stone-400: #a8a29e;
+  --smdoc-stone-500: #78716c;
+  --smdoc-stone-600: #57534e;
+  --smdoc-stone-700: #44403c;
+  --smdoc-stone-800: #292524;
+  --smdoc-stone-900: #1c1917;
+  --smdoc-stone-950: #0c0a09;
+  --smdoc-red-50: #fef2f2;
+  --smdoc-red-100: #fee2e2;
+  --smdoc-red-200: #fecaca;
+  --smdoc-red-300: #fca5a5;
+  --smdoc-red-400: #f87171;
+  --smdoc-red-500: #ef4444;
+  --smdoc-red-600: #dc2626;
+  --smdoc-red-700: #b91c1c;
+  --smdoc-red-800: #991b1b;
+  --smdoc-red-900: #7f1d1d;
+  --smdoc-red-950: #450a0a;
+  --smdoc-orange-50: #fff7ed;
+  --smdoc-orange-100: #ffedd5;
+  --smdoc-orange-200: #fed7aa;
+  --smdoc-orange-300: #fdba74;
+  --smdoc-orange-400: #fb923c;
+  --smdoc-orange-500: #f97316;
+  --smdoc-orange-600: #ea580c;
+  --smdoc-orange-700: #c2410c;
+  --smdoc-orange-800: #9a3412;
+  --smdoc-orange-900: #7c2d12;
+  --smdoc-orange-950: #431407;
+  --smdoc-amber-50: #fffbeb;
+  --smdoc-amber-100: #fef3c7;
+  --smdoc-amber-200: #fde68a;
+  --smdoc-amber-300: #fcd34d;
+  --smdoc-amber-400: #fbbf24;
+  --smdoc-amber-500: #f59e0b;
+  --smdoc-amber-600: #d97706;
+  --smdoc-amber-700: #b45309;
+  --smdoc-amber-800: #92400e;
+  --smdoc-amber-900: #78350f;
+  --smdoc-amber-950: #451a03;
+  --smdoc-yellow-50: #fefce8;
+  --smdoc-yellow-100: #fef9c3;
+  --smdoc-yellow-200: #fef08a;
+  --smdoc-yellow-300: #fde047;
+  --smdoc-yellow-400: #facc15;
+  --smdoc-yellow-500: #eab308;
+  --smdoc-yellow-600: #ca8a04;
+  --smdoc-yellow-700: #a16207;
+  --smdoc-yellow-800: #854d0e;
+  --smdoc-yellow-900: #713f12;
+  --smdoc-yellow-950: #422006;
+  --smdoc-lime-50: #f7fee7;
+  --smdoc-lime-100: #ecfccb;
+  --smdoc-lime-200: #d9f99d;
+  --smdoc-lime-300: #bef264;
+  --smdoc-lime-400: #a3e635;
+  --smdoc-lime-500: #84cc16;
+  --smdoc-lime-600: #65a30d;
+  --smdoc-lime-700: #4d7c0f;
+  --smdoc-lime-800: #3f6212;
+  --smdoc-lime-900: #365314;
+  --smdoc-lime-950: #1a2e05;
+  --smdoc-green-50: #f0fdf4;
+  --smdoc-green-100: #dcfce7;
+  --smdoc-green-200: #bbf7d0;
+  --smdoc-green-300: #86efac;
+  --smdoc-green-400: #4ade80;
+  --smdoc-green-500: #22c55e;
+  --smdoc-green-600: #16a34a;
+  --smdoc-green-700: #15803d;
+  --smdoc-green-800: #166534;
+  --smdoc-green-900: #14532d;
+  --smdoc-green-950: #052e16;
+  --smdoc-emerald-50: #ecfdf5;
+  --smdoc-emerald-100: #d1fae5;
+  --smdoc-emerald-200: #a7f3d0;
+  --smdoc-emerald-300: #6ee7b7;
+  --smdoc-emerald-400: #34d399;
+  --smdoc-emerald-500: #10b981;
+  --smdoc-emerald-600: #059669;
+  --smdoc-emerald-700: #047857;
+  --smdoc-emerald-800: #065f46;
+  --smdoc-emerald-900: #064e3b;
+  --smdoc-emerald-950: #022c22;
+  --smdoc-teal-50: #f0fdfa;
+  --smdoc-teal-100: #ccfbf1;
+  --smdoc-teal-200: #99f6e4;
+  --smdoc-teal-300: #5eead4;
+  --smdoc-teal-400: #2dd4bf;
+  --smdoc-teal-500: #14b8a6;
+  --smdoc-teal-600: #0d9488;
+  --smdoc-teal-700: #0f766e;
+  --smdoc-teal-800: #115e59;
+  --smdoc-teal-900: #134e4a;
+  --smdoc-teal-950: #042f2e;
+  --smdoc-cyan-50: #ecfeff;
+  --smdoc-cyan-100: #cffafe;
+  --smdoc-cyan-200: #a5f3fc;
+  --smdoc-cyan-300: #67e8f9;
+  --smdoc-cyan-400: #22d3ee;
+  --smdoc-cyan-500: #06b6d4;
+  --smdoc-cyan-600: #0891b2;
+  --smdoc-cyan-700: #0e7490;
+  --smdoc-cyan-800: #155e75;
+  --smdoc-cyan-900: #164e63;
+  --smdoc-cyan-950: #083344;
+  --smdoc-sky-50: #f0f9ff;
+  --smdoc-sky-100: #e0f2fe;
+  --smdoc-sky-200: #bae6fd;
+  --smdoc-sky-300: #7dd3fc;
+  --smdoc-sky-400: #38bdf8;
+  --smdoc-sky-500: #0ea5e9;
+  --smdoc-sky-600: #0284c7;
+  --smdoc-sky-700: #0369a1;
+  --smdoc-sky-800: #075985;
+  --smdoc-sky-900: #0c4a6e;
+  --smdoc-sky-950: #082f49;
+  --smdoc-blue-50: #eff6ff;
+  --smdoc-blue-100: #dbeafe;
+  --smdoc-blue-200: #bfdbfe;
+  --smdoc-blue-300: #93c5fd;
+  --smdoc-blue-400: #60a5fa;
+  --smdoc-blue-500: #3b82f6;
+  --smdoc-blue-600: #2563eb;
+  --smdoc-blue-700: #1d4ed8;
+  --smdoc-blue-800: #1e40af;
+  --smdoc-blue-900: #1e3a8a;
+  --smdoc-blue-950: #172554;
+  --smdoc-indigo-50: #eef2ff;
+  --smdoc-indigo-100: #e0e7ff;
+  --smdoc-indigo-200: #c7d2fe;
+  --smdoc-indigo-300: #a5b4fc;
+  --smdoc-indigo-400: #818cf8;
+  --smdoc-indigo-500: #6366f1;
+  --smdoc-indigo-600: #4f46e5;
+  --smdoc-indigo-700: #4338ca;
+  --smdoc-indigo-800: #3730a3;
+  --smdoc-indigo-900: #312e81;
+  --smdoc-indigo-950: #1e1b4b;
+  --smdoc-violet-50: #f5f3ff;
+  --smdoc-violet-100: #ede9fe;
+  --smdoc-violet-200: #ddd6fe;
+  --smdoc-violet-300: #c4b5fd;
+  --smdoc-violet-400: #a78bfa;
+  --smdoc-violet-500: #8b5cf6;
+  --smdoc-violet-600: #7c3aed;
+  --smdoc-violet-700: #6d28d9;
+  --smdoc-violet-800: #5b21b6;
+  --smdoc-violet-900: #4c1d95;
+  --smdoc-violet-950: #2e1065;
+  --smdoc-purple-50: #faf5ff;
+  --smdoc-purple-100: #f3e8ff;
+  --smdoc-purple-200: #e9d5ff;
+  --smdoc-purple-300: #d8b4fe;
+  --smdoc-purple-400: #c084fc;
+  --smdoc-purple-500: #a855f7;
+  --smdoc-purple-600: #9333ea;
+  --smdoc-purple-700: #7e22ce;
+  --smdoc-purple-800: #6b21a8;
+  --smdoc-purple-900: #581c87;
+  --smdoc-purple-950: #3b0764;
+  --smdoc-fuchsia-50: #fdf4ff;
+  --smdoc-fuchsia-100: #fae8ff;
+  --smdoc-fuchsia-200: #f5d0fe;
+  --smdoc-fuchsia-300: #f0abfc;
+  --smdoc-fuchsia-400: #e879f9;
+  --smdoc-fuchsia-500: #d946ef;
+  --smdoc-fuchsia-600: #c026d3;
+  --smdoc-fuchsia-700: #a21caf;
+  --smdoc-fuchsia-800: #86198f;
+  --smdoc-fuchsia-900: #701a75;
+  --smdoc-fuchsia-950: #4a044e;
+  --smdoc-pink-50: #fdf2f8;
+  --smdoc-pink-100: #fce7f3;
+  --smdoc-pink-200: #fbcfe8;
+  --smdoc-pink-300: #f9a8d4;
+  --smdoc-pink-400: #f472b6;
+  --smdoc-pink-500: #ec4899;
+  --smdoc-pink-600: #db2777;
+  --smdoc-pink-700: #be185d;
+  --smdoc-pink-800: #9d174d;
+  --smdoc-pink-900: #831843;
+  --smdoc-pink-950: #500724;
+  --smdoc-rose-50: #fff1f2;
+  --smdoc-rose-100: #ffe4e6;
+  --smdoc-rose-200: #fecdd3;
+  --smdoc-rose-300: #fda4af;
+  --smdoc-rose-400: #fb7185;
+  --smdoc-rose-500: #f43f5e;
+  --smdoc-rose-600: #e11d48;
+  --smdoc-rose-700: #be123c;
+  --smdoc-rose-800: #9f1239;
+  --smdoc-rose-900: #881337;
+  --smdoc-rose-950: #4c0519;
+  --smdoc-blueGray-50: #f8fafc;
+  --smdoc-blueGray-100: #f1f5f9;
+  --smdoc-blueGray-200: #e2e8f0;
+  --smdoc-blueGray-300: #cbd5e1;
+  --smdoc-blueGray-400: #94a3b8;
+  --smdoc-blueGray-500: #64748b;
+  --smdoc-blueGray-600: #475569;
+  --smdoc-blueGray-700: #334155;
+  --smdoc-blueGray-800: #1e293b;
+  --smdoc-blueGray-900: #0f172a;
+  --smdoc-blueGray-950: #020617;
+}
